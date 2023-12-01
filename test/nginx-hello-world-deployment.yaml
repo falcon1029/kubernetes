@@ -27,7 +27,7 @@ events {
 http {
    server {
        listen 80;
-       location / {
+       location /test {
            return 200 "Hello world!";
        }
    }
