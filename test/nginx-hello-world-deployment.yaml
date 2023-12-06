@@ -28,7 +28,7 @@ http {
    server {
        listen 443;
        location /test {
-           return 200 "Hello world! ";
+           return 200 "Hello Rancher Test! ";
        }
    }
 }
@@ -39,7 +39,7 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: nginx
