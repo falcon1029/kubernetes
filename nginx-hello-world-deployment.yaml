@@ -10,9 +10,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
-    targetPort: 80
-    nodePort: 30001
+  - port: 443
+    targetPort: 443
+    nodePort: 30301
   selector:
     app: nginx
 ---
@@ -26,9 +26,9 @@ events {
 }
 http {
    server {
-       listen 80;
-       location / {
-           return 200 "Hello world!";
+       listen 443;
+       location /test {
+           return 200 "Hello Rancher Test! ";
        }
    }
 }
@@ -39,6 +39,7 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
+  replicas: 5
   selector:
     matchLabels:
       app: nginx
@@ -53,7 +54,7 @@ spec:
       - image: nginx:latest
         name: nginx
         ports:
-        - containerPort: 80
+        - containerPort: 443
           name: web
         volumeMounts:
           - name: config-vol
