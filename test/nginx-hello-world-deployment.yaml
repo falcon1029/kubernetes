@@ -8,7 +8,7 @@ kind: Service
 metadata:
   name: nginx
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 443
     targetPort: 443
