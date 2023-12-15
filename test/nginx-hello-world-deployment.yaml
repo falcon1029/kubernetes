@@ -27,7 +27,7 @@ events {
 http {
    server {
        listen 443;
-       location /test {
+       location / {
            return 200 "Result -  Server IP: $server_addr";
        }
    }
