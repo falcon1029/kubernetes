@@ -8,7 +8,7 @@ kind: Service
 metadata:
   name: nginx-test
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 443
     targetPort: 443
