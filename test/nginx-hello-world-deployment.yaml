@@ -28,7 +28,7 @@ http {
    server {
        listen 443;
        location / {
-           return 200 "HRIS -- Server IP: $server_addr";
+           return 200 "Test Random IP: $server_addr";
        }
    }
 }
